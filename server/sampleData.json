@@ -1,0 +1,66 @@
+[
+  {
+    "id": 7,
+    "title": "Starsky & Hutch",
+    "description": "Terry Nash confesses to assassinating a mob boss turned informant just before he was about to testify. Starsky and Hutch discover that everything Terry remembers is not real.",
+    "startTime": "1501551000000",
+    "endTime": "1501552800000",
+    "genre": "action"
+  },
+  {
+    "id": 1,
+    "title": "Sunrise",
+    "description": "Wake up to a better breakfast with Samantha Armytage and David Koch for all the latest news, sport and weather",
+    "startTime": "1501529400000",
+    "endTime": "1501533000000",
+    "genre": "news"
+  },
+  {
+    "id": 4,
+    "title": "Harley Davidson TV",
+    "description": "A lifestyle series focused on the Harley Davidson",
+    "startTime": "1501542000000",
+    "endTime": "1501545600000",
+    "genre": "lifestyle"
+  },
+  {
+    "id": 2,
+    "title": "Shannon's LegendTimes of Motorsport",
+    "description": "Join host Neil Crompton for a discussion with four-time Bathurst winner and racing legendTime Allan Moffat. The program was shot at National Motor Racing Museum, Bathurst, in front of a live audience.",
+    "startTime": "1501534800000",
+    "endTime": "1501538400000",
+    "genre": "sport"
+  },
+  {
+    "id": 6,
+    "title": "Big Smo",
+    "description": "For the past year, Smo has been haunted by a bad performance at the biggest mud park in the south. Now, Smo returns to the mud bog with his family in tow in order to reclaim his victory.",
+    "startTime": "1501549200000",
+    "endTime": "1501551000000",
+    "genre": "documentary"
+  },
+  {
+    "id": 5,
+    "title": "Temporary Australians",
+    "description": "The team find out about Heavy Duty Tours and their Sturgis adventure for a bunch of Aussies.",
+    "startTime": "1501545600000",
+    "endTime": "1501547400000",
+    "genre": "documentary"
+  },
+  {
+    "id": 8,
+    "title": "S.W.A.T.",
+    "description": "Hondo and his men pursue a team of thieves and their arsonist accomplice.",
+    "startTime": "1501552800000",
+    "endTime": "1501556400000",
+    "genre": "action"
+  },
+  {
+    "id": 3,
+    "title": "Mark Berg's Fishing Addiction",
+    "description": "We kick off with an epic adventure to the Northern Territory to chase barramundi and all sorts of huge fish. This episode's winner is Ashley, a sheep shearer from rural Victoria. Mark and the crew surprise Ashley with this amazing fishing trip right in the middle of a sheep shearing session that blows Ashley away. With $10,000 worth of gear up for grabs, Ashley is put to the test in one of the best fishing destinations in Australia.",
+    "startTime": "1501538400000",
+    "endTime": "1501542000000",
+    "genre": "lifestyle"
+  }
+]
