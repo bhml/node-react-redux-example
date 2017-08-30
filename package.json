@@ -9,6 +9,7 @@
     "build": "NODE_ENV=production rm -rf ./dist && npm run build:server && npm run build:client",
     "build:server": "babel ./server -d ./dist/server --presets es2015,stage-0 --copy-files",
     "build:client": "webpack --config webpack/prod.config.js --color -p --progress",
+    "heroku-postbuild": "NODE_ENV=production npm run build:server && npm run build:client",
     "lint": "eslint ./ || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
