@@ -40,16 +40,11 @@ export default (state = initialState, action) => {
       }
 
     case `${TYPES.SCHEDULE_LOAD}_SUCCESS`:
-      return {
-        ...state,
-        loading: false,
-        items: action.schedules,
-      }
-
     case `${TYPES.SCHEDULE_SAVE}_SUCCESS`:
       return {
         ...state,
         loading: false,
+        items: action.schedules,
       }
 
     default:

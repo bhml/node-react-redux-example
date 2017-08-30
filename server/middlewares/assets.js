@@ -9,7 +9,7 @@ export default (app) => {
       res.sendFile(path.join(__dirname, '../../index.html'))
     })
   }
-  else {
+  else if (process.env.NODE_ENV !== 'testing') {
     const compiler = webpack(require('../../webpack/dev.config'))
     const serverOptions = {
       noInfo: true,

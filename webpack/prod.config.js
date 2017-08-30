@@ -22,16 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'cache-loader',
-          {
-            loader: 'babel-loader',
-            options: {
-              plugins: ['transform-decorators-legacy'],
-              presets: ['es2015', 'stage-0', 'react'],
-            },
-          },
-        ],
+        use: ['cache-loader', 'babel-loader'],
       },
 
       {

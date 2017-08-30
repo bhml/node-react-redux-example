@@ -38,7 +38,7 @@ export const saveSchedule = (text, callback) =>
       .then((response) => {
         dispatch({
           type: `${TYPES.SCHEDULE_SAVE}_SUCCESS`,
-          schedule: response.data,
+          schedules: response.data,
         })
         if (callback) callback(null, response.data)
       })

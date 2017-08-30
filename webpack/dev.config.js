@@ -7,7 +7,6 @@ const host = process.env.IP || 'localhost'
 const port = parseInt(process.env.PORT, 10) || 3000
 
 module.exports = {
-  // devtool: 'inline-source-map',
   devtool: 'eval',
   context: path.resolve(__dirname, '..'),
   entry: [
@@ -25,29 +24,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'cache-loader',
-          {
-            loader: 'babel-loader',
-            options: {
-              plugins: ['transform-decorators-legacy'],
-              presets: ['es2015', 'stage-0', 'react'],
-            },
-          },
-        ],
+        use: ['cache-loader', 'babel-loader'],
       },
 
       {
         test: /\.html$/,
         loader: 'html-loader',
       },
-
-      // {
-      //   test: /\.scss$/,
-      //   use: ['style-loader', 'css-loader', postcss, 'sass-loader']
-      // },
-
-      // { test: /\.css$/, use: ['style-loader', 'css-loader', postcss] },
 
       { test: /\.(png|jpg|gif|wav|mp3)$/, loader: 'file-loader' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff' } },

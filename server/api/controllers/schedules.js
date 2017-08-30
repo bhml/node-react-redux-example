@@ -1,17 +1,23 @@
 import _ from 'lodash'
 
+export const transformSchedules = (data) => {
+  const transformed = _.map(data, (schedule) => {
+    let duration = +schedule.endTime - +schedule.startTime
+
+    if (!duration || duration < 0) duration = '0'
+    schedule.duration = duration.toString()
+
+    return schedule
+  })
+
+  return _.sortBy(transformed, 'startTime')
+}
+
 export default db => ({
   list: (req, res) => {
-    const payload = _.map(db, (schedule) => {
-      let duration = +schedule.endTime - +schedule.startTime
+    const payload = transformSchedules(db)
 
-      if (!duration || duration < 0) duration = '0'
-      schedule.duration = duration.toString()
-
-      return schedule
-    })
-
-    res.json(_.sortBy(payload, 'startTime'))
+    res.json(payload)
   },
 
   create: (req, res) => {
@@ -36,6 +42,6 @@ export default db => ({
     }
 
     db.push(req.body)
-    res.json(req.body)
+    res.json(transformSchedules(db))
   },
 })

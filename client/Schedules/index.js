@@ -28,7 +28,6 @@ export default class Schedules extends Component {
         />
         <ScheduleCreate
           schedules={this.props.schedules}
-          onScheduleLoad={this.props.loadSchedules}
           onScheduleSave={this.props.saveSchedule}
         />
       </div>

@@ -5,7 +5,6 @@ export default class ScheduleCreate extends Component {
   static propTypes = {
     schedules: PropTypes.object.isRequired,
     onScheduleSave: PropTypes.func.isRequired,
-    onScheduleLoad: PropTypes.func.isRequired,
   }
 
   state = {
@@ -13,12 +12,9 @@ export default class ScheduleCreate extends Component {
   }
 
   handleScheduleSave = () => {
-    const { onScheduleSave, onScheduleLoad } = this.props
-
-    onScheduleSave(this.state.text, (err) => {
+    this.props.onScheduleSave(this.state.text, (err) => {
       if (err) return
       this.setState({ text: '' })
-      onScheduleLoad()
     })
   }
 
