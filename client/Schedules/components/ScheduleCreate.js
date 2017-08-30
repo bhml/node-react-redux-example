@@ -12,10 +12,12 @@ export default class ScheduleCreate extends Component {
   }
 
   handleScheduleSave = () => {
-    this.props.onScheduleSave(this.state.text, (err) => {
-      if (err) return
-      this.setState({ text: '' })
-    })
+    if (this.state.text) {
+      this.props.onScheduleSave(this.state.text, (err) => {
+        if (err) return
+        this.setState({ text: '' })
+      })
+    }
   }
 
   handleInputChange = (e) => {
@@ -40,7 +42,7 @@ export default class ScheduleCreate extends Component {
         </div>
         <button
           onClick={this.handleScheduleSave}
-          disabled={schedules.loading}
+          disabled={schedules.loading || !text}
         >
           Create new schedule
         </button>

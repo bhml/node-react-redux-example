@@ -17,6 +17,10 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+        errors: {
+          list: null,
+          create: null,
+        },
       }
 
     case `${TYPES.SCHEDULE_LOAD}_ERROR`:
@@ -44,7 +48,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        items: action.schedules,
+        items: action.data,
       }
 
     default:
