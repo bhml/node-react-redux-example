@@ -1,5 +1,6 @@
 import _ from 'lodash'
 
+// helper to transform and sort the response payload
 export const transformSchedules = (data) => {
   const transformed = _.map(data, (schedule) => {
     let duration = +schedule.endTime - +schedule.startTime
@@ -42,6 +43,8 @@ export default db => ({
     }
 
     db.push(req.body)
+
+    // send the new list back
     res.json(transformSchedules(db))
   },
 })

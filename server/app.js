@@ -15,9 +15,14 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const env = process.env.NODE_ENV || 'development'
 const testEnv = env === 'testing'
 
+// server logging
 if (!testEnv) app.use(morgan('dev'))
+
+// secure HTTP headers
 app.use(helmet({ hsts: false }))
 app.use(cors())
+
+// parse request bodies into req.body and catch invalid JSON requests
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use((error, req, res, next) => {
@@ -29,10 +34,16 @@ app.use((error, req, res, next) => {
   }
 })
 
+// reserve /public to static files
 app.use('/public', express.static(path.join(__dirname, '../public')))
 
+// initialize data and make it available to the API
 initdb((db) => {
+  // primary API endpoint (ie. you can change this to: '/api')
+  // this takes priority before the client routes
   app.use('/', api(db))
+
+  // manage client assets and webpack dev server
   assetsMiddleware(app)
 
   if (!testEnv) {
@@ -42,6 +53,7 @@ initdb((db) => {
 })
 
 if (!testEnv) {
+  // graceful shutdown on termination signals
   const terminate = () => {
     console.log(`Server stopping on port ${port}`)
     process.exit(0)

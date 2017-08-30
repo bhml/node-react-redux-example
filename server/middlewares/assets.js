@@ -5,6 +5,8 @@ import compression from 'compression'
 export default (app) => {
   if (process.env.NODE_ENV === 'production') {
     app.use(compression())
+
+    // all other routes not defined previously defaults to index.html (SPA)
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../../index.html'))
     })
@@ -28,11 +30,15 @@ export default (app) => {
       },
     }
 
+    // webpack dev server instance with hot-reloading
     const instance = require('webpack-dev-middleware')(compiler, serverOptions)
 
     app.use(instance)
     app.use(require('webpack-hot-middleware')(compiler))
 
+    // all other routes not defined previously defaults to index.html (SPA)
+    // will first wait until the webpack build is successful
+    // otherwise the index.html file would not be available
     app.get('*', (req, res, next) => {
       instance.waitUntilValid(() => {
         const filename = path.join(compiler.outputPath, 'index.html')

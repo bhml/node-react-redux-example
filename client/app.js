@@ -11,4 +11,5 @@ render(
   document.getElementById('react-root'),
 )
 
+// enable hot-reloading
 if (module.hot) module.hot.accept()

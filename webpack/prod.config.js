@@ -43,10 +43,12 @@ module.exports = {
     extensions: ['.js', '.json'],
   },
   plugins: [
+    // copy static files in ./public into the production build
     new CopyWebpackPlugin([
       { from: 'public' },
     ]),
 
+    // use AssetsWebpackPlugin instead for universal react/SSR
     new HtmlWebpackPlugin({
       template: './client/index.html',
       filename: '../index.html',

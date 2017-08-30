@@ -45,6 +45,7 @@ module.exports = {
     extensions: ['.js', '.json'],
   },
   plugins: [
+    // use AssetsWebpackPlugin instead for universal react/SSR
     new HtmlWebpackPlugin({
       inject: true,
       template: './client/index.html',

@@ -5,6 +5,7 @@ export default (db) => {
   const router = Router()
   const schedules = scheduleController(db)
 
+  // REST
   router.get('/', (req, res) => schedules.list(req, res))
   router.post('/', (req, res) => schedules.create(req, res))
 
